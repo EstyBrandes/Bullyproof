@@ -24,55 +24,53 @@
 </head>
 
 <body>
-
     <header>
         <div class="bulliproof"></div>
         <div class="dror"></div>
     </header>
-    <div id="wrapper">
-        <section class="sidebar-menu">
-            <div class="sidebar">
-                <div class="hamburger">
-                    <h2 class="bar-text">MENU</h2>
-                    <div class="side-btn-hem">
-                        <i class="fa fa-bars"></i>
+    <div class="my-container">
+        <div id="wrapper">
+            <section class="sidebar-menu">
+                <div class="sidebar">
+                    <div class="hamburger">
+                        <h2 class="bar-text">MENU</h2>
+                        <div class="side-btn-hem">
+                            <i class="fa fa-bars"></i>
+                        </div>
+                    </div>
+                    <ul class="ul-sidebar">
+                        <li class="close-it">
+                            <a href="#"><span class="bar-text">Patients</span>
+                                <div class="fafaicon">
+                                    <img src="images/profileblack.png" alt="profile" target="profile" />
+                                </div>
+                            </a>
+                        </li>
+                        <li class="close-it">
+                            <a href="#"><span class="bar-text">Simulations</span>
+                                <div class="fafaicon">
+                                    <img src="images/simulationblack.png" alt="simulation" target="simulation" />
+                                </div>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </section>
+            <section class="main-content">
+                <div class="headline">
+                    <div class="left-header">
+                        <h1 class="patients">Patients</h1>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item"><a href="#">Patients</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Liam Golan</li>
+                            </ol>
+                        </nav>
                     </div>
                 </div>
-                <ul class="ul-sidebar">
-                    <li class="close-it">
-                        <a href="#"><span class="bar-text">Patients</span>
-                            <div class="fafaicon">
-                                <img src="/images/profileblack.png" alt="profile" target="profile" />
-                            </div>
-                        </a>
-                    </li>
-                    <li class="close-it">
-                        <a href="#"><span class="bar-text">Simulations</span>
-                            <div class="fafaicon">
-                                <img src="/images/simulationblack.png" alt="simulation" target="simulation" />
-                            </div>
-                        </a>
-                    </li>
-
-                </ul>
-            </div>
-        </section>
-
-        <section class="main-content">
-            <div class="headline">
-                <div class="left-header">
-                    <h1 class="patients">Patients</h1>
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item"><a href="#">Patients</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Liam Golan</li>
-                        </ol>
-                    </nav>
-
-                </div>
                 <section class="profile">
-
                     <div class="dropdown">
                         <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
                             data-bs-toggle="dropdown" aria-expanded="false">
@@ -89,75 +87,70 @@
                             <li><a class="dropdown-item" href="#">Sign out</a></li>
                         </ul>
                     </div>
-            </div>
-
-
-
-
-            <div class="top-part">
-                <div class="search">
-                    <h3>Patient's ID</h3>
-                    <div class="form-group has-search">
-                        <span class="fa fa-search form-control-feedback"></span>
-                        <input type="text" class="form-control" placeholder="Search">
+                </section>
+                <div class="top-part">
+                    <div class="search">
+                        <h3>Patient's ID</h3>
+                        <div class="form-group has-search">
+                            <span class="fa fa-search form-control-feedback"></span>
+                            <input type="text" class="form-control" placeholder="Search">
+                        </div>
                     </div>
+                    <button class="add">
+                        <span class="add-icon"></span>
+                    </button>
                 </div>
-                <button class="add">
-                    <span class="add-icon"></span>
-                </button>
+                <div class="table-list">
+                    <h2>Recent Patient</h2>
+                    <div class="table-responsive-vertical shadow-z-1">
+                        <table id="table" class="table table-hover table-mc-light-blue">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Last visit</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="clickable-row">
+                                    <td data-title="ID">261020030</td>
+                                    <td data-title="Name">Liam Golan</td>
+                                    <td data-title="Status">21/01/2023 14:33:20</td>
+                                </tr>
+                                <tr class="clickable-row">
+                                    <td data-title="ID">202020200</td>
+                                    <td data-title="Name">Tony Stark</td>
+                                    <td data-title="Status">21/01/2023 12:31:20</td>
+                                </tr>
+                                <tr class="clickable-row">
+                                    <td data-title="ID">029051970</td>
+                                    <td data-title="Name">Bruce Wayne</td>
+                                    <td data-title="Status">21/01/2023 10:30:01</td>
+                                </tr>
+                                <tr class="clickable-row">
+                                    <td data-title="ID">080619950</td>
+                                    <td data-title="Name">Bruce Banner</td>
+                                    <td data-title="Status">21/01/2023 10:00:25</td>
+                                </tr>
+                                <tr class="clickable-row">
+                                    <td data-title="ID">091219060</td>
+                                    <td data-title="Name">Barry Allen</td>
+                                    <td data-title="Status">21/01/2023 09:40:37</td>
+                                </tr>
+                                <tr class="clickable-row">
+                                    <td data-title="ID">230419330</td>
+                                    <td data-title="Name">Natasha Romanoff</td>
+                                    <td data-title="Status">21/01/2023 09:10:40</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                            <button>Next</button>
+                        </div>
+                    </div>
+                </section>
             </div>
-
-            <div class="table-list">
-                <h2>Recent Patient</h2>
-                <div class="table-responsive-vertical shadow-z-1">
-                    <table id="table" class="table table-hover table-mc-light-blue">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Name</th>
-                                <th>Last visit</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="clickable-row">
-                                <td data-title="ID">261020030</td>
-                                <td data-title="Name">Liam Golan</td>
-                                <td data-title="Status">21/01/2023 14:33:20</td>
-                            </tr>
-                            <tr class="clickable-row">
-                                <td data-title="ID">202020200</td>
-                                <td data-title="Name">Tony Stark</td>
-                                <td data-title="Status">21/01/2023 12:31:20</td>
-                            </tr>
-                            <tr class="clickable-row">
-                                <td data-title="ID">029051970</td>
-                                <td data-title="Name">Bruce Wayne</td>
-                                <td data-title="Status">21/01/2023 10:30:01</td>
-                            </tr>
-                            <tr class="clickable-row">
-                                <td data-title="ID">080619950</td>
-                                <td data-title="Name">Bruce Banner</td>
-                                <td data-title="Status">21/01/2023 10:00:25</td>
-                            </tr>
-                            <tr class="clickable-row">
-                                <td data-title="ID">091219060</td>
-                                <td data-title="Name">Barry Allen</td>
-                                <td data-title="Status">21/01/2023 09:40:37</td>
-                            </tr>
-                            <tr class="clickable-row">
-                                <td data-title="ID">230419330</td>
-                                <td data-title="Name">Natasha Romanoff</td>
-                                <td data-title="Status">21/01/2023 09:10:40</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <button>Next</button>
-                </div>
-            </div>
-
-
-        </section>
-        <footer></footer>
+        </div>
+    <footer></footer>
 
 </body>
 
