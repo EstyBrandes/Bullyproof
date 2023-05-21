@@ -1,8 +1,3 @@
-$(".hamburger").click(function (e) {
-    e.preventDefault();
-    $(".navbar").toggleClass("active");
-});
-
 $(document).ready(function ($) {
     function mediaSize() {
         if (window.matchMedia('(max-width: 991px)').matches) {
