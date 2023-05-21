@@ -4,7 +4,7 @@
 
 /*===============================LOGOS-----------------------------------------------------*/
 header {
-    width: vw;
+    width: 100vw;
     display: flex;
     height: 80px;
     justify-content: space-between;
@@ -33,6 +33,12 @@ header {
 }
 
 /*===============================NAVBAR-----------------------------------------------------*/
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
 #wrapper {
     margin-top: 50px;
     width: 100%;
@@ -43,24 +49,20 @@ header {
     margin-left: -300px;
 }
 
-
-
-.main-content {
-    margin-left: 88px;
-    transition: margin-left 0.6s ease;
-}
-
-.main-content.sidebar-expanded {
-    margin-left: 290px;
+.my-container {
+    display: flex;
 }
 
 .sidebar-menu .sidebar {
-    position: fixed;
+    position: relative;
     width: 88px;
     height: 100%;
     background-color: #fff;
     border-right: 1px solid #ccc;
     transition: width 0.6s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .bar-text {
@@ -68,53 +70,56 @@ header {
     transition: display 0.6s ease;
 }
 
+.sidebar-menu .sidebar.expanded {
+    width: 290px;
+}
+
 .sidebar.expanded .bar-text {
     display: inline;
 
 }
 
-.sidebar-menu .sidebar:hover {
-    transition: 0.6s all ease-in-out;
-    left: 0;
-}
-
-.sidebar-menu .sidebar.expanded {
-    width: 290px;
-}
-
 .sidebar-menu .sidebar .hamburger {
     height: 90px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #ccc;
+    padding-left: 25px;
+    padding-right: 30px;
 }
 
 .sidebar-menu .sidebar .hamburger h2 {
     color: #666;
     font-size: 24px;
+    align-items: center;
     font-weight: bold;
-    margin-left: 27px;
 }
 
 .sidebar-menu .sidebar .hamburger .side-btn-hem {
-    margin-right: 27px;
-    font-size: 14px;
+    font-size: 24px;
     color: #666;
     cursor: pointer;
-
 }
 
 .sidebar-menu .sidebar .ul-sidebar {
-    display: block;
+    display: flex;
+    flex-direction: column;
     list-style-type: none;
-
+    width: 100%;
+    padding-left: 20px;
 }
 
 .sidebar-menu .sidebar .ul-sidebar .close-it {
     padding: 14px 27px;
+    width: 100%;
     margin-top: 15px;
     border: 3px solid transparent;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding-inline-start: 0px;
 }
 
 .sidebar-menu .sidebar .ul-sidebar .close-it:hover {
@@ -125,10 +130,6 @@ header {
     -webkit-transition: 0.4s all ease-in-out;
 }
 
-.sidebar-menu .sidebar .ul-sidebar .close-it:hover a {
-    color: #000;
-}
-
 .sidebar-menu .sidebar .ul-sidebar .close-it>a {
     display: flex;
     justify-content: space-between;
@@ -136,35 +137,33 @@ header {
     font-weight: bold;
     text-transform: uppercase;
     color: #545454;
-    text-decoration: none !important;
-}
-
-.sidebar-menu .sidebar .ul-sidebar .close-it .fafaicon {
-    font-size: 20px;
+    text-decoration: none;
+    padding-inline-start: 0px;
 }
 
 .fafaicon>img {
     width: 30px;
     height: 30px;
+}
 
+.main-content {
+    display: flex;
+    flex-grow: 0; 
+    margin-left: 50px; 
+    transition: margin-left 0.6s ease;
+}
+
+.main-content.sidebar-expanded {
+    flex-grow: 1;
+    margin-left: 50px;
 }
 
 
-
-
-
-
-
-
-
 /*===============================HEADER-----------------------------------------------------*/
-
-
 .headline {
     display: flex;
     justify-content: space-between;
     margin-left: 20px;
-
 }
 
 .left-header {
@@ -174,13 +173,11 @@ header {
 h1 {
     font-family: 'lato', sans-serif;
     font-size: 35px;
-
-
-
 }
 
 /*===============================BREADCRUMBS-----------------------------------------------------*/
 
+a:link,
 a:visited,
 a:active {
     color: black;
@@ -255,11 +252,11 @@ a:active {
 }
 
 /*===============================PROFILE-----------------------------------------------------*/
+
 .profile {
     display: flex;
     flex-direction: row;
     margin-right: 50px;
-
 }
 
 .dropdown-toggle {
@@ -273,8 +270,6 @@ p {
     margin-top: 30px;
 }
 
-
-
 .dropdown-toggle::after {
     display: inline-block;
     margin-left: 0.255em;
@@ -286,7 +281,6 @@ p {
     color: black;
     width: 10px;
     height: 13px;
-
 }
 
 .dropdown-menu .dropdown-menu-dark .text-small .shadow::after {
@@ -317,7 +311,6 @@ p {
     flex-direction: row;
     justify-content: space-between;
     margin-right: 60px;
-    ;
 }
 
 .search {
@@ -388,8 +381,8 @@ h3 {
     }
 }
 
-
 /*===============================TABLE-----------------------------------------------------*/
+
 .table-list {
     display: flex;
     justify-content: center;
@@ -426,6 +419,8 @@ button:hover {
     color: white
 }
 
-
-
 /*===============================FOOTER-----------------------------------------------------*/
+
+footer {
+    margin-top: auto;
+}
