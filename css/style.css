@@ -1,6 +1,6 @@
 /*===============================BASE-----------------------------------------------------*/
 
-
+@import url('https://fonts.googleapis.com/css2?family=Amiko&display=swap');
 
 /*===============================LOGOS-----------------------------------------------------*/
 header {
@@ -41,8 +41,8 @@ body {
 
 #wrapper {
     margin-top: 50px;
-    width: 100%;
-    transition: margin-left .5s;
+    flex-grow: 1;
+    display: flex;
 }
 
 #wrapper.active {
@@ -51,6 +51,7 @@ body {
 
 .my-container {
     display: flex;
+    height: calc(100vh - 80px);
 }
 
 .sidebar-menu .sidebar {
@@ -76,7 +77,6 @@ body {
 
 .sidebar.expanded .bar-text {
     display: inline;
-
 }
 
 .sidebar-menu .sidebar .hamburger {
@@ -165,6 +165,7 @@ body {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
+    width: 100%;
 }
 
 .headline {
@@ -174,10 +175,13 @@ body {
 }
 
 .left-header {
+    margin-right: 20px;
+}
+
+.left-top {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    margin-right: 20px;
+    flex-shrink: 0;
 }
 
 h1 {
@@ -266,7 +270,9 @@ a:active {
 .profile {
     display: flex;
     flex-direction: row;
-    margin-right: 50px;
+    flex-shrink: 0;
+    margin-right: 20px;
+    min-width: 200px;
 }
 
 .dropdown-toggle {
@@ -316,13 +322,6 @@ p {
 
 /*===============================MAIN-----------------------------------------------------*/
 
-.top-part {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-right: 60px;
-}
-
 .search {
     display: flex;
     flex-direction: row;
@@ -356,11 +355,13 @@ h3 {
 }
 
 .add {
-
+    min-width: 50px;
     justify-content: center;
     align-self: center;
     background-color: transparent;
     border: none;
+    margin-left: 40px;
+    margin-right: 40px;
 }
 
 .add:hover {
@@ -433,4 +434,100 @@ button:hover {
 
 footer {
     margin-top: auto;
+    position: absolute;
+    background-color: #555555;
+    width: 100vw;
+    bottom: 0;
+    height: 50px;
+    bottom: 0%;
+}
+
+.copyright {
+    color: white;
+    font-family: 'Amiko', sans-serif;
+    font-size: 11px;
+    justify-content: center;
+    align-self: center;
+    margin-left: 30px;
+}
+
+/*--------------LIAM-----------------------------*/
+
+.details {
+    display: flex;
+    width: 100vw;
+    height: fit-content;
+    flex-direction: row;
+
+}
+
+.information {
+    display: flex;
+    width: 30%;
+    flex-direction: column;
+    margin-top: 40px;
+    justify-content: space-between;
+    font-family: 'Amiko', sans-serif;
+
+}
+
+.information>p {
+    display: flex;
+    margin: 10px;
+
+}
+
+.contact {
+    font-weight: bolder;
+    font-size: larger;
+}
+
+.person {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.imageliam {
+    background-image: url("/images/liam.png");
+    width: 103px;
+    height: 103px;
+    background-repeat: no-repeat;
+
+}
+
+.liamheader {
+    font-family: 'Amiko', sans-serif;
+    font-size: 40px;
+    margin: auto;
+    margin-left: 0px;
+}
+
+.summary {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    margin-left: 40px;
+}
+
+.summary>p {
+    margin-top: 0px;
+    font-size: 16px;
+}
+
+
+
+.edit {
+    background-image: url("/images/edit.png");
+    width: 13px;
+    height: 13px;
+    margin-bottom: 8px;
+    margin-left: 430px;
+}
+
+
+
+.form-control {
+    width: 450px;
 }
