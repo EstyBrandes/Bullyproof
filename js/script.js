@@ -16,6 +16,12 @@ $(document).ready(function ($) {
 
 })
 
+$(document).ready(() => {
+    $(".clickable-row").click(function () {
+        window.location = $(this).data("href");
+    });
+});
+
 $(".hamburger").click(function (e) {
     e.preventDefault();
     $(".sidebar").toggleClass("expanded");
