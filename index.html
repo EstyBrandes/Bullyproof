@@ -18,6 +18,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiko&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js" defer></script>
     <title>Document</title>
@@ -64,34 +68,38 @@
                             <h1 class="patients">Patients</h1>
                         </div>
                     </div>
-                    <section class="profile">
-                        <div class="dropdown">
-                            <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                <p>Welcome, Meital</p>
-                                <img src="/images/meital.png" alt="meital" class="rounded-circle me-2">
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-                                <li><a class="dropdown-item" href="#">New project...</a></li>
-                                <li><a class="dropdown-item" href="#">Settings</a></li>
-                                <li><a class="dropdown-item" href="#">Profile</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Sign out</a></li>
-                            </ul>
+                    <div class="left-top">
+                        <section class="profile">
+                            <div class="dropdown">
+                                <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <p>Welcome, Meital</p>
+                                    <img src="images/meital.png" alt="meital" class="rounded-circle me-2">
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+                                    <li><a class="dropdown-item" href="#">New project...</a></li>
+                                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Sign out</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        
+                            <div class="search">
+                                <h3>Patient's ID</h3>
+                                <div class="form-group has-search">
+                                    <span class="fa fa-search form-control-feedback"></span>
+                                    <input type="text" class="form-control" placeholder="Search">
+                                </div>
+                            </div>
+                            <button class="add">
+                                <span class="add-icon"></span>
+                            </button>
                         </div>
-                    </section>
-                    <div class="search">
-                        <h3>Patient's ID</h3>
-                        <div class="form-group has-search">
-                            <span class="fa fa-search form-control-feedback"></span>
-                            <input type="text" class="form-control" placeholder="Search">
-                        </div>
-                    </div>
-                    <button class="add">
-                        <span class="add-icon"></span>
-                    </button>
+                    
                 </div>
                 <div class="bread-crumbs">
                     <nav aria-label="breadcrumb">
@@ -113,7 +121,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="clickable-row">
+                                <tr class="clickable-row" data-href="liam.html">
                                     <td data-title="ID">261020030</td>
                                     <td data-title="Name">Liam Golan</td>
                                     <td data-title="Status">21/01/2023 14:33:20</td>
@@ -145,13 +153,17 @@
                                 </tr>
                             </tbody>
                         </table>
+                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                        <script src="script.js"></script>
                             <button>Next</button>
                         </div>
                     </div>
                 </section>
-            </div>
         </div>
-    <footer></footer>
+    </div>
+    <footer>
+        <p class="copyright">&copy;2023 Dror Institute, All rights reserved</p>
+    </footer>
 
 </body>
 
