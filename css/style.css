@@ -370,7 +370,7 @@ h3 {
 }
 
 .add-icon {
-    background-image: url('/images/addperson.png');
+    background-image: url("../images/addperson.png");
     width: 40px;
     height: 40px;
     background-repeat: no-repeat;
@@ -378,7 +378,7 @@ h3 {
 
 .add-icon:hover {
     background-repeat: no-repeat;
-    background-image: url('/images/addwhite.png');
+    background-image: url("../images/addwhite.png");
 }
 
 @media only screen and (max-width:480px) {
