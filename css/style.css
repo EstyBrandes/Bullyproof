@@ -531,3 +531,163 @@ footer {
 .form-control {
     width: 450px;
 }
+/*--------------LIAM-----------------------------*/
+
+.details {
+    display: flex;
+    width: 100vw;
+    height: fit-content;
+    flex-direction: row;
+
+}
+
+.information {
+    display: flex;
+    width: 30%;
+    flex-direction: column;
+    margin-top: 40px;
+    justify-content: space-between;
+    font-family: 'Amiko', sans-serif;
+
+}
+
+.information>p {
+    display: flex;
+    margin: 10px;
+
+}
+
+.contact {
+    font-weight: bolder;
+    font-size: larger;
+}
+
+.person {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.imageliam {
+    background-image: url("/images/liam.png");
+    width: 103px;
+    height: 103px;
+    background-repeat: no-repeat;
+
+}
+
+.liamheader {
+    font-family: 'Amiko', sans-serif;
+    font-size: 40px;
+    margin: auto;
+    margin-left: 0px;
+}
+
+.summary {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    margin-left: 40px;
+}
+
+.summary>p {
+    margin-top: 0px;
+    font-size: 16px;
+}
+
+
+
+.edit {
+    background-image: url("/images/edit.png");
+    width: 13px;
+    height: 13px;
+    margin-bottom: 8px;
+    margin-left: 430px;
+}
+
+
+
+.form-control {
+    width: 450px;
+}
+
+/*-------HISTORY--------------------*/
+.history {
+    display: flex;
+    width: 80%;
+}
+
+.history-list {
+
+    overflow: auto;
+}
+
+.red-warning {
+    display: flex;
+    background-image: url("/images/redwarning.png");
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    justify-content: center;
+    align-items: center;
+    margin-left: 28px;
+
+}
+
+.modify {
+    display: flex;
+    flex-direction: row;
+}
+
+.pen {
+    background-image: url("/images/edit.png");
+    width: 13px;
+    height: 13px;
+    margin-right: 8px;
+}
+
+.send {
+    background-image: url("/images/send.png");
+    width: 13px;
+    height: 13px;
+    margin-right: 8px;
+}
+
+.simulation {
+    background-image: url("/images/watch.png");
+    width: 15px;
+    height: 15px;
+    margin-right: 8px;
+}
+
+.download {
+    background-image: url("/images/download.png");
+    width: 15px;
+    height: 15px;
+    margin-right: 8px;
+}
+
+.missing-anomalies {
+    display: flex;
+    background-image: url("/images/line.png");
+    width: 13px;
+    height: 13px;
+    background-repeat: no-repeat;
+    justify-content: center;
+    align-items: center;
+    margin-left: 32px;
+    margin-top: 10px;
+}
+
+.yellow-warning {
+    display: flex;
+    background-image: url("/images/yellowarning.png");
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    justify-content: center;
+    align-items: center;
+    margin-left: 28px;
+
+}
