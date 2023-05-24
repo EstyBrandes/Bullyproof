@@ -12,9 +12,9 @@
     $parent1Phone = isset($_POST['parent1-phone']) ? $_POST['parent1-phone'] : 'ERROR';
     $parent1Email = isset($_POST['parent1-email']) ? $_POST['parent1-email'] : 'ERROR';
 
-    $parent2Name = $_POST['parent2-name'];
-    $parent2Phone = $_POST['parent2-phone'];
-    $parent2Email = $_POST['parent2-email'];
+    $parent2Name = isset($_POST['parent2-name']) ? $_POST['parent2-name'] : 'ERROR';
+    $parent2Phone = isset($_POST['parent2-phone']) ? $_POST['parent2-phone'] : 'ERROR';
+    $parent2Email = isset($_POST['parent2-email']) ? $_POST['parent2-email'] : 'ERROR';
 ?>
 
 <!DOCTYPE html>
