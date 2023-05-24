@@ -434,12 +434,11 @@ button:hover {
 
 footer {
     margin-top: auto;
-    position: absolute;
+    dispaly:flex;
     background-color: #555555;
     width: 100vw;
-    bottom: 0;
     height: 50px;
-    bottom: 0%;
+   
 }
 
 .copyright {
@@ -690,4 +689,11 @@ footer {
     align-items: center;
     margin-left: 28px;
 
+}
+.edit,
+.simulation,
+.send,
+.pen,
+.download:hover {
+    cursor: pointer;
 }
