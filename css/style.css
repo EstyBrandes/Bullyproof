@@ -322,10 +322,15 @@ p {
 
 /*===============================MAIN-----------------------------------------------------*/
 
+.content-box {
+    max-height: calc(100vh - 314px);
+    overflow-y: auto;
+    padding-bottom: 20px;
+}
+
 .search {
     display: flex;
     flex-direction: row;
-    margin-top: 20px;
 }
 
 h3 {
@@ -606,9 +611,23 @@ footer {
 }
 
 
-
 .form-control {
     width: 450px;
+}
+
+.btn {
+    background-color: #666; 
+    color: white;
+}
+
+.btn:active {
+    background-color: #ccc;
+    color: black;
+}
+
+.btn:hover {
+    background-color: white;
+    color: #666;
 }
 
 /*-------HISTORY--------------------*/
