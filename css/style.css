@@ -4,7 +4,6 @@
 
 /*===============================LOGOS-----------------------------------------------------*/
 header {
-    width: 100vw;
     display: flex;
     height: 80px;
     justify-content: space-between;
@@ -29,7 +28,6 @@ header {
     background-repeat: no-repeat;
     margin-right: 40px;
     margin-top: 20px;
-
 }
 
 /*===============================NAVBAR-----------------------------------------------------*/
@@ -67,7 +65,7 @@ body {
 }
 
 .bar-text {
-    display: none;
+    display: none; 
     transition: display 0.6s ease;
 }
 
@@ -76,7 +74,7 @@ body {
 }
 
 .sidebar.expanded .bar-text {
-    display: inline;
+    display: inline; 
 }
 
 .sidebar-menu .sidebar .hamburger {
@@ -170,7 +168,6 @@ body {
 
 .headline {
     display: flex;
-    justify-content: space-between;
     margin-left: 20px;
 }
 
@@ -184,8 +181,13 @@ body {
     flex-shrink: 0;
 }
 
+h2, h3 {
+    width: 100%;
+    white-space: nowrap;
+}
+
 h1 {
-    font-family: 'lato', sans-serif;
+    font-family: 'Amiko', sans-serif;
     font-size: 35px;
 }
 
@@ -281,7 +283,7 @@ a:active {
 
 p {
     color: #232323;
-    font-family: 'lato', sans-serif;
+    font-family: 'Amiko', sans-serif;
     margin-right: 8px;
     margin-top: 30px;
 }
@@ -302,7 +304,7 @@ p {
 .dropdown-menu .dropdown-menu-dark .text-small .shadow::after {
     color: black;
     position: absolute;
-    inset: auto auto 0px 0px px;
+    inset: auto auto 0px 0px 0px;
     margin: 0px;
     transform: translate(0px, -34px);
     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
@@ -340,10 +342,16 @@ h3 {
     align-self: center;
 }
 
+h2 {
+    font-family: 'Amiko', sans-serif;
+    margin-left: 20%;
+    font-size: 28px;
+}
+
 .has-search .form-control {
     padding-left: 2.375rem;
     margin-left: 20px;
-    width: 200px;
+    min-width: 100px;
 }
 
 .has-search .form-control-feedback {
@@ -372,7 +380,6 @@ h3 {
 .add:hover {
     border-radius: 30%;
     background-color: #232323;
-
 }
 
 .add-icon {
@@ -399,6 +406,13 @@ h3 {
 
 /*===============================TABLE-----------------------------------------------------*/
 
+.tabletop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .table-list {
     display: flex;
     justify-content: center;
@@ -407,11 +421,7 @@ h3 {
     width: 80%
 }
 
-h2 {
-    font-family: 'lato', sans-serif;
-    margin-left: 20%;
-    font-size: 28px;
-}
+
 
 .clickable-row {
     cursor: pointer;
@@ -424,7 +434,7 @@ h2 {
 
 button {
     display: flex;
-    font-family: 'lato', sans-serif;
+    font-family: 'Amiko', sans-serif;
     font-size: 15px;
     border-style: none;
     float: right;
@@ -439,11 +449,12 @@ button:hover {
 
 footer {
     margin-top: auto;
-    dispaly:flex;
+    position: absolute;
     background-color: #555555;
     width: 100vw;
+    bottom: 0;
     height: 50px;
-   
+    bottom: 0%;
 }
 
 .copyright {
@@ -459,7 +470,6 @@ footer {
 
 .details {
     display: flex;
-    width: 100vw;
     height: fit-content;
     flex-direction: row;
 
@@ -494,7 +504,7 @@ footer {
 }
 
 .imageliam {
-    background-image: url("/images/liam.png");
+    background-image: url("../images/liam.png");
     width: 103px;
     height: 103px;
     background-repeat: no-repeat;
@@ -511,7 +521,6 @@ footer {
 .summary {
     display: flex;
     flex-direction: column;
-    width: 100vw;
     margin-left: 40px;
 }
 
@@ -523,93 +532,12 @@ footer {
 
 
 .edit {
-    background-image: url("/images/edit.png");
+    background-image: url("../images/edit.png");
     width: 13px;
     height: 13px;
     margin-bottom: 8px;
     margin-left: 430px;
 }
-
-
-
-.form-control {
-    width: 450px;
-}
-/*--------------LIAM-----------------------------*/
-
-.details {
-    display: flex;
-    width: 100vw;
-    height: fit-content;
-    flex-direction: row;
-
-}
-
-.information {
-    display: flex;
-    width: 30%;
-    flex-direction: column;
-    margin-top: 40px;
-    justify-content: space-between;
-    font-family: 'Amiko', sans-serif;
-
-}
-
-.information>p {
-    display: flex;
-    margin: 10px;
-
-}
-
-.contact {
-    font-weight: bolder;
-    font-size: larger;
-}
-
-.person {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-
-}
-
-.imageliam {
-    background-image: url("/images/liam.png");
-    width: 103px;
-    height: 103px;
-    background-repeat: no-repeat;
-
-}
-
-.liamheader {
-    font-family: 'Amiko', sans-serif;
-    font-size: 40px;
-    margin: auto;
-    margin-left: 0px;
-}
-
-.summary {
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-    margin-left: 40px;
-}
-
-.summary>p {
-    margin-top: 0px;
-    font-size: 16px;
-}
-
-
-
-.edit {
-    background-image: url("/images/edit.png");
-    width: 13px;
-    height: 13px;
-    margin-bottom: 8px;
-    margin-left: 430px;
-}
-
 
 .form-control {
     width: 450px;
@@ -643,7 +571,7 @@ footer {
 
 .red-warning {
     display: flex;
-    background-image: url("/images/redwarning.png");
+    background-image: url("../images/redwarning.png");
     width: 20px;
     height: 20px;
     background-repeat: no-repeat;
@@ -659,28 +587,28 @@ footer {
 }
 
 .pen {
-    background-image: url("/images/edit.png");
+    background-image: url("../images/edit.png");
     width: 13px;
     height: 13px;
     margin-right: 8px;
 }
 
 .send {
-    background-image: url("/images/send.png");
+    background-image: url("../images/send.png");
     width: 13px;
     height: 13px;
     margin-right: 8px;
 }
 
 .simulation {
-    background-image: url("/images/watch.png");
+    background-image: url("../images/watch.png");
     width: 15px;
     height: 15px;
     margin-right: 8px;
 }
 
 .download {
-    background-image: url("/images/download.png");
+    background-image: url("../images/download.png");
     width: 15px;
     height: 15px;
     margin-right: 8px;
@@ -688,7 +616,7 @@ footer {
 
 .missing-anomalies {
     display: flex;
-    background-image: url("/images/line.png");
+    background-image: url("../images/line.png");
     width: 13px;
     height: 13px;
     background-repeat: no-repeat;
@@ -700,7 +628,7 @@ footer {
 
 .yellow-warning {
     display: flex;
-    background-image: url("/images/yellowarning.png");
+    background-image: url("../images/yellowarning.png");
     width: 20px;
     height: 20px;
     background-repeat: no-repeat;
