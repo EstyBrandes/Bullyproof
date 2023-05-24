@@ -367,6 +367,15 @@ h2 {
     color: #aaa;
 }
 
+a.add {
+    display: inline-block;
+    text-decoration: none;
+}
+
+a.add .add-icon {
+    display: inline-block;
+}
+
 .add {
     min-width: 50px;
     justify-content: center;
