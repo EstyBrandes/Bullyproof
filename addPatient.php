@@ -39,7 +39,7 @@
 
 <body>
     <header>
-        <a href="index.html">
+        <a href="patients.php">
             <div class="bulliproof"></div>
         </a>
         <div class="dror"></div>
@@ -108,8 +108,8 @@
                 <div class="bread-crumbs">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                            <li class="breadcrumb-item"><a href="index.html">Patients</a></li>
+                            <li class="breadcrumb-item"><a href="patients.php">Home</a></li>
+                            <li class="breadcrumb-item"><a href="patients.php">Patients</a></li>
                             <li class="breadcrumb-item active"><a href="#">Add Patient</a></li>
                         </ol>
                     </nav>
