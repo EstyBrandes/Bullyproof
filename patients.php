@@ -53,14 +53,14 @@
         </a>
         <div class="dror"></div>
     </header>
-    <div class="my-container">
-        <div id="wrapper">
-            <section class="sidebar-menu">
-                <div class="sidebar">
-                    <div class="hamburger">
-                        <h2 class="bar-text">MENU</h2>
-                        <div class="side-btn-hem">
-                            <i class="fa fa-bars"></i>
+    
+    <div id="wrapper">
+        <section class="sidebar-menu">
+            <div class="sidebar">
+                <div class="hamburger">
+                    <h2 class="bar-text">MENU</h2>
+                    <div class="side-btn-hem">
+                        <i class="fa fa-bars"></i>
                         </div>
                     </div>
                     <ul class="ul-sidebar">
@@ -82,46 +82,32 @@
                     </ul>
                 </div>
             </section>
+        <div class="my-container">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item active" aria-current="page"><a href="#">Patients</a></li>
+                    </ol>
+                </nav>
             <section class="main-content">
                 <div class="top-part">
                     <div class="headline">
-                        <div class="left-header">
-                            <h1 class="patients">Patients</h1>
+                            <h1>Patients</h1>
                         </div>
                     </div>
                     <div class="left-top">
                         <section class="profile">
                             <div class="dropdown">
-                                <a href="#"
-                                    class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+                                <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
                                     data-bs-toggle="dropdown" aria-expanded="false">
                                     <p>Welcome, Meital</p>
                                     <img src="images/meital.png" alt="meital" class="rounded-circle me-2">
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-                                    <li><a class="dropdown-item" href="#">New project...</a></li>
-                                    <li><a class="dropdown-item" href="#">Settings</a></li>
-                                    <li><a class="dropdown-item" href="#">Profile</a></li>
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    <li><a class="dropdown-item" href="#">Sign out</a></li>
+                                    <li><a class="dropdown-item" href="/index.php">Sign out</a></li>
                                 </ul>
                             </div>
                         </section>
-
-
                     </div>
-
-                </div>
-                <div class="bread-crumbs">
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active"><a href="#">Patients</a></li>
-                        </ol>
-                    </nav>
-                </div>
                 <div class="content-box">
                     <div class="table-list">
                         <div class="tabletop">
