@@ -54,60 +54,57 @@
         <div class="dror"></div>
     </header>
     
-    <div id="wrapper">
+    <div id="my-wrapper">
         <section class="sidebar-menu">
             <div class="sidebar">
                 <div class="hamburger">
                     <h2 class="bar-text">MENU</h2>
                     <div class="side-btn-hem">
                         <i class="fa fa-bars"></i>
-                        </div>
                     </div>
-                    <ul class="ul-sidebar">
-                        <li class="close-it">
-                            <a href="#"><span class="bar-text">Patients</span>
-                                <div class="fafaicon">
-                                    <img src="images/profileblack.png" alt="profile" target="profile" />
-                                </div>
-                            </a>
-                        </li>
-                        <li class="close-it">
-                            <a href="#"><span class="bar-text">Simulations</span>
-                                <div class="fafaicon">
-                                    <img src="images/simulationblack.png" alt="simulation" target="simulation" />
-                                </div>
-                            </a>
-                        </li>
-
-                    </ul>
                 </div>
-            </section>
+                <ul class="ul-sidebar">
+                    <li class="close-it">
+                        <a href="#"><span class="bar-text">Patients</span>
+                            <div class="fafaicon">
+                                <img src="images/profileblack.png" alt="profile" target="profile" />
+                            </div>
+                        </a>
+                    </li>
+                    <li class="close-it">
+                        <a href="#"><span class="bar-text">Simulations</span>
+                            <div class="fafaicon">
+                                <img src="images/simulationblack.png" alt="simulation" target="simulation" />
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
         <div class="my-container">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item active" aria-current="page"><a href="#">Patients</a></li>
-                    </ol>
-                </nav>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item active" aria-current="page"><a href="#">Patients</a></li>
+                </ol>
+            </nav>
             <section class="main-content">
                 <div class="top-part">
                     <div class="headline">
-                            <h1>Patients</h1>
+                        <h1>Patients</h1>
+                    </div>
+                    <section class="profile">
+                        <div class="dropdown">
+                            <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <p>Welcome, Meital</p>
+                                <img src="images/meital.png" alt="meital" class="rounded-circle me-2">
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+                                <li><a class="dropdown-item" href="/index.php">Sign out</a></li>
+                            </ul>
                         </div>
-                    </div>
-                    <div class="left-top">
-                        <section class="profile">
-                            <div class="dropdown">
-                                <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                    <p>Welcome, Meital</p>
-                                    <img src="images/meital.png" alt="meital" class="rounded-circle me-2">
-                                </a>
-                                <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-                                    <li><a class="dropdown-item" href="/index.php">Sign out</a></li>
-                                </ul>
-                            </div>
-                        </section>
-                    </div>
+                    </section>
+                </div>
                 <div class="content-box">
                     <div class="table-list">
                         <div class="tabletop">

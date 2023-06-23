@@ -37,20 +37,22 @@ body {
     min-height: 100vh;
 }
 
-#wrapper {
+#my-wrapper {
     margin-top: 50px;
     flex-grow: 1;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 
-#wrapper.active {
+.my-container.active {
     margin-left: -300px;
 }
 
 .my-container {
     display: flex;
-    height: calc(100vh - 80px);
+    height: calc(100vh - 180px);
+    width: calc(100vw - 88px);
+    flex-direction: column;
 }
 
 .sidebar-menu .sidebar {
@@ -199,21 +201,6 @@ a:active {
     color: black;
 }
 
-@media only screen and (min-width:481px) {
-
-    .breadcrumb-item.active {
-        font-weight: bold;
-        text-decoration: underline;
-    }
-}
-
-@media only screen and (max-width:480px) {
-    .breadcrumb-item.active {
-        font-weight: bold;
-        text-decoration: underline;
-    }
-}
-
 /*===============================PROFILE-----------------------------------------------------*/
 
 .profile {
@@ -316,16 +303,6 @@ a.add .add-icon {
 .add-icon:hover {
     background-repeat: no-repeat;
     background-image: url("../images/addwhite.png");
-}
-
-@media only screen and (max-width:480px) {
-    .top-part {
-        flex-direction: column-reverse;
-    }
-
-    .add-icon {
-        float: right;
-    }
 }
 
 /*===============================TABLE-----------------------------------------------------*/
