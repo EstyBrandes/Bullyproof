@@ -36,10 +36,3 @@ $(".hamburger").click(function (e) {
     })
 })()
 
-var tableRow = document.getElementById('clickable-row');
-
-// Add a click event listener to the table row
-tableRow.addEventListener('click', function () {
-    window.location.href = '#';
-});
-
