@@ -115,7 +115,6 @@
                 <div class="bread-crumbs">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="patients.php">Home</a></li>
                             <li class="breadcrumb-item"><a href="patients.php">Patients</a></li>
                             <li class="breadcrumb-item active"><a href="#">Liam Golan</a></li>
                         </ol>
