@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include "config.php";
 
     $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
@@ -90,19 +91,20 @@
             <section class="main-content">
                 <div class="top-part">
                     <div class="headline">
-                        <h1>Patients</h1>
+                        <h1>Patients <?php echo $_SESSION['email']; ?></h1>
                     </div>
-                    <div class="dropdown" class="profile">
-                        <div class="dropdown-toggle-container">
-                            <span class="welcome-text">Welcome, Meital</span>
-                            <img src="images/meital.png" alt="meital" class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="/index.php">Sign Out</a>
-                            </div>
+                    <section class="profile">
+                        <div class="dropdown">
+                            <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <p>Welcome, Meital</p>
+                                <img src="images/meital.png" alt="meital" class="rounded-circle me-2">
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+                                <li><a class="dropdown-item" href="/index.php">Sign out</a></li>
+                            </ul>
                         </div>
-                    </div>
+                    </section>
                 </div>
                 <div class="content-box">
                     <div class="table-list">

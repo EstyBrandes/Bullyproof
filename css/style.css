@@ -206,15 +206,10 @@ a:active {
 .profile {
     display: flex;
     flex-direction: row;
+    flex-shrink: 0;
+    margin-right: 20px;
+    min-width: 200px;
 }
-.dropdown-toggle-container{
-    margin-right:20px;
-}
-
-.dropdown-toggle-container img:hover {
-    cursor: pointer;
-    
-  }
 
 .dropdown-toggle {
     outline: 0;

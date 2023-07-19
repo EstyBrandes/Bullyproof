@@ -1,7 +1,6 @@
 
 <?php
     // Include database and configuration files
-
     include 'config.php';
 
     // Initialize the variables
@@ -12,7 +11,7 @@
     // Check if the form is submitted
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Retrieve the email and password from the form
-        $email = $_POST["loginMail"];
+        $username = $_POST["loginUsername"];
         $password = $_POST["loginPass"];
 
         // Create a database connection
@@ -24,12 +23,16 @@
         }
 
         // Prepare the query to fetch the user with the given email and password
-        $query = "SELECT * FROM tbl_207_users WHERE email = '$email' AND password = '$password'";
+        $query = "SELECT * FROM tbl_207_users WHERE username = '$username' AND password = '$password'";
         $result = mysqli_query($connection, $query);
+        $row = mysqli_fetch_assoc($result);
 
         // Check if the query was successful
         if ($result && mysqli_num_rows($result) > 0) {
             // Redirect the user to "patients.php" page
+            $_SESSION['email'] = $row['email'];
+            $_SESSION['user_type'] = $row['usrtype']; // corrected typo here
+            $_SESSION['user_id'] = $row['id']; // corrected typo here
             header("Location: patients.php");
             exit;
         } else {
@@ -57,15 +60,14 @@
 <body>
     <div class="container"  class="form-group">
         <h1>Login</h1>
-        <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post" id="frm">
+        <form action="login_process.php" method="post" id="frm">
             <div class="form-group">
-                <label for="loginMail">Email: </label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="loginMail" id="loginMail" aria-describedby="emailHelp" placeholder="Enter email" required>
-                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                <label for="username">Username: </label>
+                <input type="text" class="form-control" id="username" name="username" placeholder="Enter username" required>
             </div>
             <div class="form-group">
-                <label for="loginPass" for="exampleInputPassword1">Password: </label>
-                <input type="password" class="form-control" id="exampleInputPassword1" name="loginPass" id="loginPass" placeholder="Enter Password" required>
+                <label for="password">Password: </label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password" required>
             </div>
             <button type="submit" class="btn btn-primary">Log Me In</button>
         </form>
