@@ -200,7 +200,7 @@ body {
 
         .main-content.sidebar-expanded {
             flex-grow: 1;
-            margin-left: 50px;
+            margin-left: 200px;
         }
 }
 
