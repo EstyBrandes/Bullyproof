@@ -3,12 +3,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Amiko&display=swap');
 
 /*===============================LOGOS-----------------------------------------------------*/
-
+*{
+    box-sizing: border-box;
+}
 header {
     display: flex;
     height: 80px;
 }
-
+body{
+    overflow-x: hidden;;
+}
 .bulliproof {
     display: flex;
     background-image: url("../images/Bulliproof.png");
@@ -29,6 +33,7 @@ header {
 @media (min-width: 769px) {
     header {
         width: 100vw;
+        justify-content: space-between;
     }
 
     .bulliproof {
@@ -39,6 +44,10 @@ header {
     .dror {
         margin-right: 40px;
         margin-top: 20px;
+    }
+
+    #mobile-btn{
+        display: none;
     }
 }
 
@@ -58,10 +67,7 @@ header {
     }
 
     .dror {
-        align-self: end;
-        margin-right: 0;
-        width: 30px;
-        height: 30px;
+        display:none;
     }
 }
 
@@ -153,9 +159,12 @@ header {
             text-decoration: none;
             padding-inline-start: 0px;
         }
-
+.my-container{
+    overflow-x: hidden;
+}
 
 @media (min-width: 769px) {
+    
     .my-container.active {
         margin-left: -300px;
     }
@@ -189,8 +198,17 @@ header {
 }
 
 @media (max-width: 768px) {
+    .sidebar-menu{
+        border: 1px solid #929292;
+    }
+    #inner-menu-btn{
+        display: none;
+    }
     body {
         flex-direction: column;
+    }
+    table{
+        font-size: 13px;;
     }
     .sidebar-menu{
         display:none;
@@ -201,7 +219,7 @@ header {
         width: 100%;
     }
 
-        .sidebar-menu .sidebar.expanded {
+    .sidebar-menu .sidebar.expanded {
             width: 100%;
         }
 
@@ -220,15 +238,21 @@ header {
     .sidebar-menu .sidebar .hamburger .side-btn-hem {
         position: fixed;
         left:10px;
-        top:10px;
+        
     }
     .side-btn-hem i{
         font-size:35px;
+        
     }
-
- /*   .sidebar .bar-text {
-        display: none;
-    }*/
+    #mobile-btn{
+        position:fixed;
+    }
+    .mobile-rounded-circle{
+        position:fixed;
+        left:100%;
+        transform: translateX(-120%);
+        top:15px;
+    }
 }
 
 body {
@@ -323,11 +347,6 @@ a:active {
     display: flex;
     flex-shrink: 0;
 }
-
-.dropdown-toggle {
-    outline: 0;
-}
-
 p {
     color: #232323;
     font-family: 'Amiko', sans-serif;
@@ -339,10 +358,15 @@ p {
         margin-right: 20px;
         min-width: 200px;
     }
-
-    p {
+    .dropdown-toggle {
+        outline: 0;
+    }
+    .welcome-message {
         margin-right: 8px;
         margin-top: 30px;
+    }
+    .mobile-dropdown{
+        display:none;
     }
 }
 
@@ -354,8 +378,14 @@ p {
         margin-right: 0;
     }
 
-    p {
+    .welcome-message {
         display: none;
+    }
+    .mobile-dropdown{
+
+    }
+    .dropdown-toggle{
+        display:none;
     }
 }
 
@@ -454,7 +484,6 @@ a.add {
     justify-content: center;
     margin-top: 40px;
     flex-direction: column;
-    width: 80%
 }
 
 
@@ -464,7 +493,6 @@ a.add {
 }
 
 .table {
-    width: 80%;
     margin-left: auto;
 }
 
@@ -485,6 +513,8 @@ button {
 
 footer {
     background-color: #555555;
+    display: flex;
+    bottom: 0;
 }
 
 .copyright {
@@ -495,11 +525,9 @@ footer {
 
 @media (min-width: 769px) {
     footer {
-        position: absolute;
+        
         width: 100vw;
         height: 50px;
-        bottom: 0;
-        bottom: 0%;
         margin-top: auto;
     }
 
@@ -512,7 +540,7 @@ footer {
 
 @media (max-width: 768px) {
     footer {
-        position: relative;
+        
         width: 100%;
         height: auto;
     }
@@ -679,7 +707,6 @@ footer {
 /*-------HISTORY--------------------*/
 .history {
     display: flex;
-    width: 80%;
 }
 
 .history-list {
