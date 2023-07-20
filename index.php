@@ -30,9 +30,11 @@
         // Check if the query was successful
         if ($result && mysqli_num_rows($result) > 0) {
             // Redirect the user to "patients.php" page
-            $_SESSION['email'] = $row['email'];
-            $_SESSION['user_type'] = $row['usrtype']; // corrected typo here
-            $_SESSION['user_id'] = $row['id']; // corrected typo here
+            $_SESSION['email'] = $row['user_email'];
+            $_SESSION['user_type'] = $row['user_type'];
+            $_SESSION['user_id'] = $row['user_id'];
+            $_SESSION['user_f_name'] = $row['user_f_name'];
+            $_SESSION['img'] = $row['img'];
             header("Location: patients.php");
             exit;
         } else {

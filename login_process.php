@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     session_start();
                     $_SESSION['user_id'] = $user['user_id'];
                     $_SESSION['username'] = $user['username'];
-                    $_SESSION['type'] = $user['user_type'];
+                    $_SESSION['user_type'] = $user['user_type'];
                     $_SESSION['f_name'] = $user['user_f_name'];
 
                     // Redirect to the dashboard or wherever you want
