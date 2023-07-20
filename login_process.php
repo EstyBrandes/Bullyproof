@@ -27,8 +27,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     $_SESSION['img'] = $user['img'];
 
                     // Redirect to the dashboard or wherever you want
-                    header("Location: dashboard.php");
-                    exit;
+                    if ($_SESSION['user_type'] == 1) { // therapist
+                        header("Location: patients.php");
+                        exit;
+                    } else if ($_SESSION['user_type'] == 2) { // parent
+                        $sql = "SELECT * FROM tbl_207_patient WHERE parent_id = ?";
+                        if ($stmt = $conn->prepare($sql)) {
+                            $stmt->bind_param("i", $_SESSION['user_id']);
+                            if ($stmt->execute()) {
+                                $result = $stmt->get_result();
+                                if ($result->num_rows > 0) {
+                                    $patient = $result->fetch_assoc();
+                                    header("Location: patientcontent.php?patient_id=" . $patient['patient_id']);
+                                    exit;
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -38,6 +53,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 // If login failed, redirect back to the login page
-header("Location: login.php");
+header("Location: index.php");
 exit;
 ?>
