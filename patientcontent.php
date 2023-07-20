@@ -129,13 +129,15 @@ function getWarningDiv($anomalies) {
                                             </td>
                                         <?php endif; ?>
                                         <td>
-                                            <div class="modify">
-                                                <div class="pen"></div>
+                                            <div class="modify row">
+                                                <div class="pen col col-sm-6"></div>
                                                 <?php if ($_SESSION['user_type'] == '1'): ?>
-                                                    <div class="send"></div>
-                                                    <div class="simulation"></div>
-                                                    <div class="download"></div>
-                                                <?php endif; ?>
+                                                    <div class="send col col-sm-6"></div>
+                                                    <div class="simulation col col-sm-6"></div>
+                                                    <div class="download col col-sm-6"></div>
+                                                 <?php endif; ?>
+                                            </div>
+                                               
                                             </div>
                                         </td>
                                     </tr>
