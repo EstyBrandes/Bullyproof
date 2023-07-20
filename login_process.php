@@ -23,7 +23,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     $_SESSION['user_id'] = $user['user_id'];
                     $_SESSION['username'] = $user['username'];
                     $_SESSION['user_type'] = $user['user_type'];
-                    $_SESSION['f_name'] = $user['user_f_name'];
+                    $_SESSION['user_f_name'] = $user['user_f_name'];
+                    $_SESSION['img'] = $user['img'];
 
                     // Redirect to the dashboard or wherever you want
                     header("Location: dashboard.php");
