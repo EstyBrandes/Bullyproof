@@ -201,9 +201,6 @@ body {
         margin-left: 200px;
     }
 }
-.sidebar-menu {
-    border: 1px solid #929292;
-}
 
 @media (max-width: 768px) {
     
