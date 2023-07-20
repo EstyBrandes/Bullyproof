@@ -395,6 +395,7 @@ p {
 .content-box {
     max-height: calc(100vh - 314px);
     overflow-y: auto;
+    overflow-x: hidden;
     padding-bottom: 20px;
 }
 
@@ -482,7 +483,6 @@ a.add {
 
 .table-list {
     display: flex;
-    justify-content: center;
     margin-top: 40px;
     flex-direction: column;
 }
@@ -581,10 +581,8 @@ footer {
 }
 
 .imageliam {
-    background-image: url("../images/liam.png");
     width: 103px;
     height: 103px;
-    background-repeat: no-repeat;
 }
 
 .liamheader {
