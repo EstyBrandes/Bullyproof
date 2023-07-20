@@ -89,7 +89,7 @@ menubtn.addEventListener("click", (event) => {
                         <section class="profile">
                             <div class="dropdown">
                                 <span class="welcome-message">Welcome, <?php echo $_SESSION['user_f_name']; ?></span>
-                                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="userMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a class="dropdown-toggle" href="#" role="button" id="userMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <img src="<?php echo $_SESSION['img']; ?>" class="rounded-circle" alt="User Image">
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userMenu">
