@@ -31,17 +31,33 @@
         <a href="patients.php">
             <div class="bulliproof"></div>
         </a>
+       
         <div class="dror"></div>
+         <div id="mobile-btn" class="side-btn-hem">
+                            <i class="fa fa-bars"></i>
+                        </div>
+                        <script>
+const menubtn=  document.querySelector("#mobile-btn");
+menubtn.addEventListener("click", (event) => {
+    const menu = document.querySelector(".sidebar-menu");
+    
+    const sidebar = document.querySelector(".sidebar");
+    if(menu){
+        $(menu).toggle();
+        sidebar .classList.add("expanded");
+    }
+})
+
+</script>
     </header>
     <div class="my-container">
+
         <div id="wrapper">
             <section class="sidebar-menu">
                 <div class="sidebar">
                     <div class="hamburger">
                         <h2 class="bar-text">MENU</h2>
-                        <div class="side-btn-hem">
-                            <i class="fa fa-bars"></i>
-                        </div>
+                        
                     </div>
                     <ul class="ul-sidebar">
                         <li class="close-it">
@@ -72,21 +88,13 @@
                     <div class="left-top">
                         <section class="profile">
                             <div class="dropdown">
-                                <a href="#"
-                                    class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                    <p>Welcome, Meital</p>
-                                    <img src="images/meital.png" alt="meital" class="rounded-circle me-2">
+                                <span class="welcome-message">Welcome, <?php echo $_SESSION['user_f_name']; ?></span>
+                                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="userMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <img src="<?php echo $_SESSION['img']; ?>" class="rounded-circle" alt="User Image">
                                 </a>
-                                <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-                                    <li><a class="dropdown-item" href="#">New project...</a></li>
-                                    <li><a class="dropdown-item" href="#">Settings</a></li>
-                                    <li><a class="dropdown-item" href="#">Profile</a></li>
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    <li><a class="dropdown-item" href="#">Sign out</a></li>
-                                </ul>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userMenu">
+                                    <a class="dropdown-item" href="logout.php">Logout</a>
+                                </div>
                             </div>
                         </section>
                     </div>
