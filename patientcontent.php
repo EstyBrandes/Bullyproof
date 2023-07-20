@@ -72,13 +72,13 @@ function getWarningDiv($anomalies) {
     <div class="content-box">
                    <section class="main-details">
                         <div class="person">
-                                <div class="imageliam"></div>
+                                <div class="imageliam">
+                                <img width="80" height="80" class="img rounded-circle" alt="avatar" src="<?php echo $patient['parent_img']; ?>"/></div>
                                 <p class="liamheader"><?php echo $name; ?></p>
                         </div>
                         <section class="details">
                         <?php if ($_SESSION['user_type'] == '2'): ?>
                         <div class="patient-details-parent">
-                            <img src="<?php echo $patient['img']; ?>" alt="Patient Image">
                             <p>Age: <?php echo $patient['age']; ?></p>
                             <p>ID: <?php echo $patient['patient_id']; ?></p>
                             <p>Address: <?php echo $patient['patient_address']; ?></p>
@@ -122,30 +122,27 @@ function getWarningDiv($anomalies) {
                                     <?php foreach ($simulations as $simulation): ?>
                                     <tr>
                                         <th scope="row"><?php echo htmlspecialchars($simulation['simulation_name']); ?></th>
-                                        <td><?php echo htmlspecialchars($simulation['simulation_date']); ?></td>
+                                        <td data-key="simulation_date" data-id="<?php echo $simulation['simulation_id']?>"><?php echo htmlspecialchars($simulation['simulation_date']); ?></td>
                                         <?php if ($_SESSION['user_type'] == '1'): ?>
                                             <td>
                                                 <div class="<?php echo getWarningDiv($simulation['anomalies']); ?>"></div>
                                             </td>
                                         <?php endif; ?>
                                         <td>
-                                           <div class="modify row">
-                                                <div class="col col-sm-6">
-                                                    <i class="fa-solid fa-pen"></i>
-                                                </div>
-                                                <?php if ($_SESSION['user_type'] == '1'): ?>
-                                                    <div class="col col-sm-6">
-                                                        <i class="fa-regular fa-paper-plane"></i>
-                                                    </div>
-                                                    <div class="col col-sm-6">
-                                                    <i class="fa-regular fa-circle-play"></i>
-                                                    </div>
-                                                    <div class="col col-sm-6">
-                                                        <i class="fa-solid fa-download"></i>
-                                                    </div>>
-                                               
+                                            <div class="modify">
+                                                <?php if ($_SESSION['user_type'] == 1) : ?>
+                                                    <div  class="pen edit-btn" data-simulationsummary="<?php echo $simulation['simulation_summary']; ?>" data-simulationid="<?php echo $simulation['simulation_id']; ?>" data-toggle="modal" data-target="#therapistModal"></div>
+                                                <?php elseif ($_SESSION['user_type'] == 2 && (strtotime($simulation['simulation_date']) > time())): ?>
+                                                    <div class="pen parent-edit-btn" data-simulationid="<?php echo $simulation['simulation_id']; ?>" data-toggle="modal" data-target="#parentModal"></div>
+                                                <?php endif; ?>
+                                                <?php if ($_SESSION['user_type'] == 1): ?>
+                                                    <div class="send"></div>
+                                                    <div class="simulation"></div>
+                                                    <div class="download"></div>
+                                                <?php endif; ?>
                                             </div>
                                         </td>
+
                                     </tr>
                                     <?php endforeach; ?>
                                 </tbody>
@@ -154,6 +151,55 @@ function getWarningDiv($anomalies) {
                     </section>
                 </div>
             </section>
+
+            <?php if ($_SESSION['user_type'] == 1): ?>
+                <!-- Modal for therapists here -->
+                <div class="modal" id="therapistModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+
+                          <!-- Modal Header -->
+                          <div class="modal-header">
+                            <h4 class="modal-title">Edit Simulation Summary</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          </div>
+
+                          <!-- Modal body -->
+                          <div class="modal-body">
+                            <textarea class="form-control" id="summaryTextarea" rows="3"></textarea>
+                          </div>
+
+                          <!-- Modal footer -->
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" id="saveButton">Save</button>
+                            <button type="button" class="btn" data-dismiss="modal">Cancel</button>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            <?php elseif ($_SESSION['user_type'] == 2 && (strtotime($simulation['simulation_date']) > time())): ?>
+                <!-- Modal for parents here -->
+                <div class="modal fade" id="parentModal" tabindex="-1" role="dialog" aria-labelledby="parentModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="parentModalLabel">Delay Simulation</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </Button>
+                      </div>
+                      <div class="modal-body">
+                        Are you sure you want to delay the simulation by a week?
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                        <button type="button" class="btn btn-primary" id="delaySimulation">Yes</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            <?php endif; ?>
+             
 
 <?php
     include "bottom_layout.php";

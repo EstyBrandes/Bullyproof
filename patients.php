@@ -1,5 +1,6 @@
 <?php
     include "config.php";
+    include "t_auth_check.php";
     $pageTitle = "Patients";
     $breadcrumbs = '<ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href=#>Home</a></li>
@@ -30,13 +31,6 @@ $patients = $result->fetch_all(MYSQLI_ASSOC);
             <div class="tabletop">
                 <h2>Recent Patient</h2>
                 <div class="top-part"></div>
-                <div class="search">
-                    <h3>Patient's ID</h3>
-                    <div class="form-group has-search">
-                        <span class="fa fa-search form-control-feedback"></span>
-                        <input type="text" class="form-control" placeholder="Search">
-                    </div>
-                </div>
                 <a href="addPatinent.html" class="add">
                     <span class="add-icon"></span>
                 </a>
@@ -62,7 +56,6 @@ $patients = $result->fetch_all(MYSQLI_ASSOC);
                 </table>
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
                 <script src="script.js"></script>
-                <button>Next</button>
             </div>
 
 
