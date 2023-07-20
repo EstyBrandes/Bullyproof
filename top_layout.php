@@ -56,8 +56,8 @@
     </header>
     <div class="my-container">
 
-        <div id="wrapper">
-            <section class="sidebar-menu col">
+        <div id="wrapper" >
+            <section class="sidebar-menu">
                 <div class="sidebar">
                     <div class="hamburger">
                         <h2 class="bar-text">MENU</h2>
