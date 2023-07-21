@@ -6,38 +6,86 @@
     // Prepare the SQL to fetch the patient's details
     $sql = "SELECT * FROM tbl_207_patient WHERE patient_id = ?";
     $stmt = $conn->prepare($sql);
+    if (!$stmt) {
+        die("Error preparing statement: " . $conn->error);
+    }
     $stmt->bind_param("i", $patient_id);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    // Fetch the patient's details
-    $patient = $result->fetch_assoc();
+    if ($stmt->execute()) {
+        $stmt->bind_result($patient_id, $age, $patient_address, $patient_f_name, $patient_l_name, $patient_phone, $patient_email, $parent_id, $carer_id, $patient_summary, $parent_img, $last_visit);
+        // Fetch the patient's details
+        while ($stmt->fetch()) {
+            $patient = array(
+                'patient_id' => $patient_id,
+                'patient_f_name' => $patient_f_name,
+                'patient_l_name' => $patient_l_name,
+                'age' => $age,
+                'patient_address' => $patient_address,
+                'patient_email' => $patient_email,
+                'parent_id' => $parent_id,
+                'parent_img' => $parent_img,
+                'patient_phone' => $patient_phone,
+                'carer_id' => $carer_id,
+                'patient_summary' => $patient_summary,
+                'last_visit' => $last_visit
+            );
+        }
+    }
+    $stmt->close();
 
     // Prepare the SQL to fetch the patient's simulations
     $sql = "SELECT * FROM tbl_207_simulation WHERE patient_id = ?";
     $stmt = $conn->prepare($sql);
+    if (!$stmt) {
+        die("Error preparing statement: " . $conn->error);
+    }
     $stmt->bind_param("i", $patient_id);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    // Fetch the patient's simulations
-    $simulations = $result->fetch_all(MYSQLI_ASSOC);
+    if ($stmt->execute()) {
+        $stmt->bind_result($simulation_id, $patient_id, $simulation_name, $simulation_date, $simulation_summary, $simulation_img, $anomalies );
+        // Fetch the patient's simulations
+        $simulations = array();
+        while ($stmt->fetch()) {
+            $simulations[] = array(
+                'simulation_id' => $simulation_id,
+                'patient_id' => $patient_id,
+                'simulation_name' => $simulation_name,
+                'simulation_date' => $simulation_date,
+                'anomalies' => $anomalies,
+                'simulation_summary' => $simulation_summary,
+                'simulation_img' => $simulation_img  
+            );
+        }
+    }
+    $stmt->close();
 
     // Prepare the SQL to fetch the parent's details
     $sql = "SELECT * FROM tbl_207_user WHERE user_id = ?";
     $stmt = $conn->prepare($sql);
+    if (!$stmt) {
+        die("Error preparing statement: " . $conn->error);
+    }
     $stmt->bind_param("i", $patient['parent_id']);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    // Fetch the parent's details
-    $parent = $result->fetch_assoc();
+    if ($stmt->execute()) {
+        $stmt->bind_result($user_id, $username, $password, $user_type, $user_f_name, $user_l_name, $address, $user_phone, $user_email, $img);
+        // Fetch the parent's details
+        while ($stmt->fetch()) {
+            $parent = array(
+                'user_id' => $user_id,
+                'user_f_name' => $user_f_name,
+                'user_l_name' => $user_l_name,
+                'user_email' => $user_email,
+                'password' => $password,
+                'user_type' => $user_type,
+                'img' => $img,
+                'username' => $username,
+                'address' => $address,
+                'user_phone' => $user_phone
+            );
+        }
+    }
+    $stmt->close();
 
     // Get the full name of the parent
     $parent_name = $parent['user_f_name'] . ' ' . $parent['user_l_name'];
-
-    // Close the statement
-    $stmt->close();
 
     $name = $patient['patient_f_name'] . ' ' . $patient['patient_l_name'];
     $pageTitle = $name;
@@ -46,7 +94,7 @@
                             <li class="breadcrumb-item"><a href=#>'. $name .'</a></li>
                         </ol>';
     include "top_layout.php";
-    ?>
+?>
 
 
 <?php
@@ -104,7 +152,7 @@ function getWarningDiv($anomalies) {
                                 </div>
                             <?php endif; ?>
                         </div>
-                    </section>
+                        </section>
                         <hr class="divider">
                         <section class="history">
                             <table class="table" class="history-list">
@@ -149,59 +197,12 @@ function getWarningDiv($anomalies) {
                             </table>
                         </section>
                     </section>
-                </div>
-            </section>
 
-            <?php if ($_SESSION['user_type'] == 1): ?>
-                <!-- Modal for therapists here -->
-                <div class="modal" id="therapistModal">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
 
-                          <!-- Modal Header -->
-                          <div class="modal-header">
-                            <h4 class="modal-title">Edit Simulation Summary</h4>
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                          </div>
-
-                          <!-- Modal body -->
-                          <div class="modal-body">
-                            <textarea class="form-control" id="summaryTextarea" rows="3"></textarea>
-                          </div>
-
-                          <!-- Modal footer -->
-                          <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" id="saveButton">Save</button>
-                            <button type="button" class="btn" data-dismiss="modal">Cancel</button>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-            <?php elseif ($_SESSION['user_type'] == 2 && (strtotime($simulation['simulation_date']) > time())): ?>
-                <!-- Modal for parents here -->
-                <div class="modal fade" id="parentModal" tabindex="-1" role="dialog" aria-labelledby="parentModalLabel" aria-hidden="true">
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="parentModalLabel">Delay Simulation</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </Button>
-                      </div>
-                      <div class="modal-body">
-                        Are you sure you want to delay the simulation by a week?
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-                        <button type="button" class="btn btn-primary" id="delaySimulation">Yes</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-            <?php endif; ?>
-             
-
+           
 <?php
+    include "modal.php";
     include "bottom_layout.php";
     mysqli_close($conn);
+
 ?>

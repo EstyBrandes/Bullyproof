@@ -22,15 +22,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 if ($stmt = $conn->prepare($sql)) {
                     $stmt->bind_param("i", $simulation_id);
                     if ($stmt->execute()) {
-                        $result = $stmt->get_result();
-                        $simulation = $result->fetch_assoc();
+                        $stmt->bind_result($simulation_date);  // bind the result column to the variable
 
-                        echo json_encode(array(
-                            'status' => 1,
-                            'simulation_date' => $simulation['simulation_date']
-                        ));
-                    } else {
-                        echo json_encode(array('status' => 0));
+                        if ($stmt->fetch()) {  // fetch the result
+                            echo json_encode(array(
+                                'status' => 1,
+                                'simulation_date' => $simulation_date
+                            ));
+                        } else {
+                            echo json_encode(array('status' => 0));
+                        }
                     }
                 }
             } else {

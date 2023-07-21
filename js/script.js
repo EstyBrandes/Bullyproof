@@ -14,12 +14,14 @@ $(document).ready(function ($) {
     mediaSize();
     /* Attach the function to the resize event listener */
     window.addEventListener('resize', mediaSize, false);
+    debugger
 
 })
 
 $(document).ready(() => {
     $(".clickable-row").click(function () {
         window.location = $(this).data("href");
+        debugger
     });
 });
 $(".parent-edit-btn").click(function () {
@@ -27,13 +29,18 @@ $(".parent-edit-btn").click(function () {
     const modal = $("#parentModal");
     const btn = modal.find("#delaySimulation");
     const id = that.data("simulationid");
+    debugger
     setTimeout(() => {
         if (btn) {
-            btn.attr("data-simulationid", id)
+            btn.attr("data-simulationid", id);
         }
-        
-    }, 100)
-})
+    }, 100);
+
+    // Show the modal
+    $('#parentModal').modal('show');
+    debugger
+});
+
 $(".edit-btn").click(function () {
     const id = $(this).data("simulationid");
     const summary = this.dataset.simulationsummary;
@@ -49,6 +56,7 @@ $(".hamburger").click(function (e) {
     e.preventDefault();
     $(".sidebar").toggleClass("expanded");
     $(".main-content").toggleClass("sidebar-expanded");
+    debugger
 });
 
 (() => {
@@ -56,6 +64,7 @@ $(".hamburger").click(function (e) {
     const tooltipTriggerList = Array.from(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
     tooltipTriggerList.forEach(tooltipTriggerEl => {
         new bootstrap.Tooltip(tooltipTriggerEl)
+        debugger
     })
 })()
 
@@ -64,7 +73,7 @@ $(document).ready(function () {
     $('#therapistModal').on('show.bs.modal', function (event) {
         var pen = $(event.relatedTarget); // Button that triggered the modal
         var summary = pen.data('summary'); // Extract info from data-* attributes
-
+        debugger
         var modal = $(this);
         modal.find('.modal-body textarea').val(summary);
     });
@@ -95,8 +104,11 @@ $(document).ready(function () {
         });
     });
 
+
+
     // Delay the simulation when the delaySimulation button is clicked
     $('#delaySimulation').click(function () {
+        console.log('Button clicked');
         const id = $(this).data("simulationid");
         debugger
         $.ajax({
@@ -115,6 +127,7 @@ $(document).ready(function () {
                     $(tr).text(simulation_date)
 
                     // Close the modal
+                    debugger
                     $('#parentModal').modal('hide');
                 } else {
                     alert('There was a problem delaying the simulation');

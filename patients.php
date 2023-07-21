@@ -12,17 +12,19 @@
 <?php
 $user_id = $_SESSION['user_id'];
 
-$sql = "SELECT * FROM tbl_207_patient WHERE carer_id = ?";
+$sql = "SELECT patient_id, patient_f_name, patient_l_name, last_visit FROM tbl_207_patient WHERE carer_id = ?";
 
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $user_id);
 
 $stmt->execute();
 
-$result = $stmt->get_result();
+$stmt->bind_result($patient_id, $patient_f_name, $patient_l_name, $last_visit);
 
-$patients = $result->fetch_all(MYSQLI_ASSOC);
-
+$patients = [];
+while ($stmt->fetch()) {
+    $patients[] = ['patient_id' => $patient_id, 'patient_f_name' => $patient_f_name, 'patient_l_name' => $patient_l_name, 'last_visit' => $last_visit];
+}
 
 ?>
 
